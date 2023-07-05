@@ -1,3 +1,5 @@
+<h1 align="center"><b>Hi , I'm Aditya Dwi Irawan </b><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
+
 # Getting started with REST API testing with Serenity and Cucumber 6
 
 This is a simple starter project for Serenity with Cucumber 6 and RestAssured
