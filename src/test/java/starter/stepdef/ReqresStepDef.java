@@ -1,4 +1,4 @@
-package starter.reqres;
+package starter.stepdef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.reqres.ReqresAPI;
+import starter.reqres.ReqresResponses;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -46,12 +48,14 @@ public class ReqresStepDef {
 
     @When("Send request post create user")
     public void sendRequestPostCreateUser() {
-        SerenityRest.when().post(ReqresAPI.POST_CREATE_USER);
+        SerenityRest.when()
+                .post(ReqresAPI.POST_CREATE_USER);
     }
 
     @Then("Status code should be {int} created")
     public void statusCodeShouldBeCreated(int created) {
-        SerenityRest.then().statusCode(created);
+        SerenityRest.then()
+                .statusCode(created);
     }
 
     @And("Response body name was {string} an job was {string}")
