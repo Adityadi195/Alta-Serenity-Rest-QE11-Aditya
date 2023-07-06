@@ -1,4 +1,4 @@
-package starter.reqres;
+package starter.reqres.POST;
 
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;

@@ -1,18 +1,14 @@
-package starter.stepdef;
+package starter.stepdef.POST;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import org.hamcrest.Matchers;
-import starter.reqres.RegisterAPI;
-import starter.reqres.ReqresResponses;
+import starter.reqres.POST.RegisterAPI;
 import starter.utils.Constants;
 
 import java.io.File;
-
-import static org.hamcrest.CoreMatchers.equalTo;
 
 public class RegisterStepDef {
     @Steps
