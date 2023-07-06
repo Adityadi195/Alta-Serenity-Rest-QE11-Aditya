@@ -10,7 +10,6 @@ import java.io.File;
 public class ReqresAPI {
 
     public static String GET_LIST_USER = Constants.BASE_URL + "/api/users?page={page}";
-
     public static String POST_CREATE_USER = Constants.BASE_URL+"/api/users";
 
     @Step("Get list user")

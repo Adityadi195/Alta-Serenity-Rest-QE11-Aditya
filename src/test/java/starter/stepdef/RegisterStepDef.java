@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.Steps;
 import org.hamcrest.Matchers;
 import starter.reqres.RegisterAPI;
 import starter.reqres.ReqresResponses;
+import starter.utils.Constants;
 
 import java.io.File;
 
@@ -20,7 +21,7 @@ public class RegisterStepDef {
 
     @Given("Successfully posted registration with valid JSON")
     public void successfullyPostedRegistrationWithValidJSON() {
-        File json = new File(RegisterAPI.JSON_REQ_BODY + "/RegisterSuccessful.json");
+        File json = new File(Constants.REQ_BODY + "/RegisterSuccessful.json");
         registerAPI.setSuccessfulPostRegister(json);
     }
 
@@ -33,7 +34,7 @@ public class RegisterStepDef {
     //unsucessful
     @Given("Unsuccessfully posted registration with valid JSON")
     public void unsuccessfullyPostedRegistrationWithValidJSON() {
-        File json = new File(RegisterAPI.JSON_REQ_BODY + "/RegisterUnsuccessful.json");
+        File json = new File(Constants.REQ_BODY + "/RegisterUnsuccessful.json");
         registerAPI.setUnuccessfulPostRegister(json);
     }
 
