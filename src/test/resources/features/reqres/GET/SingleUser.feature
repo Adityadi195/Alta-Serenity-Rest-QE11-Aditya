@@ -1,5 +1,6 @@
 Feature: Reqres get single user
-  @Tugas
+
+  @Tugas @SingleUser
   Scenario Outline: Get a single user with a valid parameter id
     Given Get a single user with a valid ID <id>
     When Send a get request for a single user
@@ -9,7 +10,7 @@ Feature: Reqres get single user
       | 1  |
       | 2  |
 
-  @Tugas
+  @Tugas @SingleUser
   Scenario Outline: Get a single user with an invalid parameter id
     Given Get a single user using an invalid id <id>
     When Send a request to get a single user
@@ -20,7 +21,7 @@ Feature: Reqres get single user
       | 211 |
       | 555 |
 
-  @Tugas
+  @Tugas @SingleUserNotFound
   Scenario Outline: Get single user not found with valid parameter id
     Given  Get single user with id was not found <id>
     When Send get single user not found request

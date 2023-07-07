@@ -18,6 +18,7 @@ public class ReqresStepDef {
     @Steps
     ReqresAPI reqresAPI;
 
+    //GET LIST USER
     @Given("Get list user with valid parameter page {int}")
     public void getListUserWithValidParameterPage(int page) {
         reqresAPI.getListUsers(page);
@@ -39,7 +40,7 @@ public class ReqresStepDef {
     }
 
 
-    //post create new user
+    //POST CREATE
     @Given("Post create user with valid json")
     public void postCreateUserWithValidJson() {
         File json = new File(Constants.REQ_BODY + "/User.json");
@@ -63,5 +64,40 @@ public class ReqresStepDef {
         SerenityRest.and()
                 .body(ReqresResponses.NAME, equalTo(name))
                 .body(ReqresResponses.JOB, equalTo(job));
+    }
+
+    //PUT UPDATE
+    @Given("Put update user with valid id {int} and json")
+    public void fdfputUpdateUserWithValidIdAndJson(int id) {
+        File json = new File(Constants.REQ_BODY+"/UpdateUser.json");
+        ReqresAPI.putUpdateUser(id,json);
+    }
+
+    @When("Send request put update user")
+    public void sendRequestPutUpdateUser() {
+        SerenityRest.when().put(ReqresAPI.PUT_UPDATE_USER);
+    }
+
+    @And("Response body name was {string} and job was {string}")
+    public void responseBodyNameWasAndJobWas(String name, String job) {
+        SerenityRest.and()
+                .body(ReqresResponses.NAME,equalTo(name))
+                .body(ReqresResponses.JOB,equalTo(job));
+    }
+
+    //DELETE
+    @Given("Delete user with valid id {int}")
+    public void deleteUserWithValidId(int id) {
+        reqresAPI.deleteUser(id);
+    }
+
+    @When("Send request delete user")
+    public void sendRequestDeleteUser() {
+        SerenityRest.when().delete(ReqresAPI.DELETE_USER);
+    }
+
+    @Then("Status code should be {int} no content")
+    public void statusCodeShouldBeNoContent(int noContent) {
+        SerenityRest.then().statusCode(noContent);
     }
 }

@@ -5,14 +5,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.reqres.SingleUserAPI;
+import starter.reqres.GET.SingleUserAPI;
 
 
 public class SingleUserStepDef {
     @Steps
     SingleUserAPI singleUserAPI;
 
-//  Get a single user with a valid parameter id
+    //SINGLE USER
     @Given("Get a single user with a valid ID {int}")
     public void getASingleUserWithAValidID(int id) {
         singleUserAPI.setGetSingleUser(id);
@@ -23,7 +23,7 @@ public class SingleUserStepDef {
         SerenityRest.when().get(SingleUserAPI.GET_SINGLE_USER);
     }
 
-    //Get a single user with an invalid parameter id
+    //SINGLE USER NOT FOUND
     @Given("Get a single user using an invalid id {int}")
     public void getASingleUserUsingAnInvalidId(int id) {
         singleUserAPI.setGetSingleUser(id);
@@ -39,7 +39,6 @@ public class SingleUserStepDef {
         SerenityRest.then().statusCode(NotFound);
     }
 
-    // Get single user not found with valid parameter id
     @Given("Get single user with id was not found {int}")
     public void getSingleUserWithIdWasNotFound(int id) {
         singleUserAPI.setGetSingleUserNotFound(id);

@@ -15,6 +15,7 @@ public class RegisterStepDef {
     RegisterAPI registerAPI;
 
 
+    //REGISTER - SUCCESSFUL
     @Given("Successfully posted registration with valid JSON")
     public void successfullyPostedRegistrationWithValidJSON() {
         File json = new File(Constants.REQ_BODY + "/RegisterSuccessful.json");
@@ -27,7 +28,7 @@ public class RegisterStepDef {
     }
 
 
-    //unsucessful
+    //REGISTER - UNSUCCESSFUL
     @Given("Unsuccessfully posted registration with valid JSON")
     public void unsuccessfullyPostedRegistrationWithValidJSON() {
         File json = new File(Constants.REQ_BODY + "/RegisterUnsuccessful.json");

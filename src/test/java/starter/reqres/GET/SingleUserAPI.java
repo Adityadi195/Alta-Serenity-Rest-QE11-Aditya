@@ -1,4 +1,4 @@
-package starter.reqres;
+package starter.reqres.GET;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;

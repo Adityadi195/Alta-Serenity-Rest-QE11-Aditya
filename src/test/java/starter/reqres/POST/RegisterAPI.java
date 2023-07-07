@@ -14,6 +14,7 @@ public class RegisterAPI {
     @Step("Post register successful")
     public void setSuccessfulPostRegister(File json){
         SerenityRest.given()
+//              .headers("Autorization","Bearear token)
                 .contentType(ContentType.JSON)
                 .body(json);
     }

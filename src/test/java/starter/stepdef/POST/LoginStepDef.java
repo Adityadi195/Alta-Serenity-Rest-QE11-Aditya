@@ -15,9 +15,10 @@ public class LoginStepDef {
     @Steps
     LoginAPI loginAPI;
 
+    //LOGIN - SUCCESSFUL
     @Given("Successfully login with valid JSON")
     public void successfullyLoginWithValidJSON() {
-        File json = new File(Constants.REQ_BODY+ "/Login.json");
+        File json = new File(Constants.REQ_BODY+ "/LoginSuccessful.json");
         loginAPI.setSuccessfulLogin(json);
     }
 
@@ -26,10 +27,10 @@ public class LoginStepDef {
         SerenityRest.when().post(LoginAPI.POST_LOGIN_SUCCESSFUL);
     }
 
-    //Unsuccessful login
+    //LOGIN - UNSUCCESSFUL
     @Given("Unsuccessfully login with invalid JSON")
     public void unsuccessfullyLoginWithInvalidJSON() {
-        File json = new File(Constants.REQ_BODY+"/InvalidLogin.json");
+        File json = new File(Constants.REQ_BODY+"/LoginUnsucessful.json");
         loginAPI.setUnuccessfulLogin(json);
     }
 
