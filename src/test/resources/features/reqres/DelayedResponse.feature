@@ -9,7 +9,6 @@ Feature: Reqres get delayed response
     Examples:
       | page |
       | 1    |
-      | 2    |
 
   @Tugas
   Scenario Outline: Get delayed response with invalid parameter page

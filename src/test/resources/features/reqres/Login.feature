@@ -1,13 +1,13 @@
 Feature: Reqres login user
 
-  @Tugas @LoginSuccessful
+  @Tugas
   Scenario: Login user with valid user
     Given Successfully login with valid JSON
     When Send request login
     Then Status code should be 200 OK
     And Login user successful json schema
 
-  @Tugas @LoginUnsuccessful
+  @Tugas
   Scenario: Login user with invalid user
     Given Unsuccessfully login with invalid JSON
     When Send request login
