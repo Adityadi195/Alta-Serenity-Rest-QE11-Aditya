@@ -51,7 +51,7 @@ public class LoginStepDef {
                 .statusCode(NotFound);
     }
 
-    @And("Login user successful")
+    @And("Login user successful json schema")
     public void loginUserSuccessful() {
         File json = new File(Constants.JSON_SCHEMA+"/LoginJSONSchema.json");
         SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));

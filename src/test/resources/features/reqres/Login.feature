@@ -5,14 +5,14 @@ Feature: Reqres login user
     Given Successfully login with valid JSON
     When Send request login
     Then Status code should be 200 OK
-    And Login user successful
+    And Login user successful json schema
 
   @Tugas @LoginUnsuccessful
   Scenario: Login user with invalid user
     Given Unsuccessfully login with invalid JSON
     When Send request login
     Then Status code should be 400 bad request
-    And Post login unsuccessful
+    And Post login unsuccessful json schema
 
   @Tugas
   Scenario: Login unsuccessful with empty email value
