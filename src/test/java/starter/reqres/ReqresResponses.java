@@ -5,6 +5,7 @@ public class ReqresResponses {
     public static String NAME = "name";
     public static String JOB = "job";
     public static String ERROR = "error";
+    public static String ERROR_PASSWORD = "error";
     public static String ID = "id";
     public static String DATA_ID = "data.id";
 }
